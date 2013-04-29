@@ -1,0 +1,37 @@
+#!/bin/bash
+while read oldrev newrev refname
+do
+    branch=$(git rev-parse --symbolic --abbrev-ref $refname)
+        echo "Working off $branch branch!"
+    if [ "master" == "$branch" ]; then
+                GIT_WORK_TREE=/var/wwp/com.rudiyardley.cv git checkout -f master
+                rm -f /var/wwp/com.rudiyardley.cv/.rvmrc
+                cd /var/wwp/com.rudiyardley.cv/interactivecv
+                mkdir -p /var/wwp/com.rudiyardley.cv/interactivecv/log
+                mkdir -p /var/wwp/com.rudiyardley.cv/interactivecv/tmp
+                chown -R deploy:deploy /var/wwp/com.rudiyardley.cv/interactivecv/log
+                chown -R deploy:deploy /var/wwp/com.rudiyardley.cv/interactivecv/tmp
+                touch /var/wwp/com.rudiyardley.cv/interactivecv/log/production.log
+                chown deploy:deploy /var/wwp/com.rudiyardley.cv/interactivecv/log/production.log
+                chmod 666 /var/wwp/com.rudiyardley.cv/interactivecv/log/production.log
+                bundle install --without development test
+                bundle exec rake db:migrate RAILS_ENV="production"
+                bundle exec rake assets:precompile RAILS_ENV="production"
+                touch tmp/restart.txt
+    elif [ "staging" == "$branch" ]; then
+                GIT_WORK_TREE=/var/wws/com.rudiyardley.cv git checkout -f staging
+                rm -f /var/wws/com.rudiyardley.cv/.rvmrc
+                cd /var/wws/com.rudiyardley.cv/interactivecv
+                mkdir -p /var/wws/com.rudiyardley.cv/interactivecv/log
+                mkdir -p /var/wws/com.rudiyardley.cv/interactivecv/tmp
+                chown -R deploy:deploy /var/wws/com.rudiyardley.cv/interactivecv/log
+                chown -R deploy:deploy /var/wws/com.rudiyardley.cv/interactivecv/tmp
+                touch /var/wws/com.rudiyardley.cv/interactivecv/log/staging.log
+                chown deploy:deploy /var/wws/com.rudiyardley.cv/interactivecv/log/staging.log
+                chmod 666 /var/wws/com.rudiyardley.cv/interactivecv/log/staging.log
+                bundle install --without development test
+                bundle exec rake db:migrate RAILS_ENV="staging"
+                bundle exec rake assets:precompile RAILS_ENV="production"
+                touch tmp/restart.txt
+    fi
+done
