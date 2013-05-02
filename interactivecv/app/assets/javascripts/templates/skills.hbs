@@ -1,0 +1,25 @@
+<div class="skill-list well">
+	<form class="form-search">
+		{{view Ember.TextField 
+			valueBinding="controller.searchFilter" 
+			placeholder="Search Skills..." 
+			class="input-medium search-query"  
+		}}
+	</form>
+{{#each group in controller.groupsList}}
+	<div class="clearfix" >
+		<a {{bindAttr href="group.idslug"}} data-toggle="collapse">
+			<h4 class="pull-left">{{group.title}}</h4>
+			<i class="icon-chevron-down pull-right"></i>
+		</a>
+	</div>
+	<div {{bindAttr id="group.slug"}} class="collapse in">
+		<ul class="nav nav-pills nav-stacked">
+			{{#each skill in group.skills}}
+	    		{{view Interactivecv.SkillView}}
+			{{/each}}
+		</ul>
+	</div>
+{{/each}}
+</div>
+

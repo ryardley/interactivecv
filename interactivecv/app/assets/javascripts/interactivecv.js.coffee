@@ -5,5 +5,7 @@
 #= require_tree ./helpers
 #= require_tree ./templates
 #= require_tree ./routes
+#= require_tree ./lib
+#= require_tree ./transitions
 #= require ./router
 #= require_self

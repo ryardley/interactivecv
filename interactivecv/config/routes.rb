@@ -2,9 +2,6 @@ Interactivecv::Application.routes.draw do
   
 
 
-  resources :skills
-
-
   get "ember/start"
 
   ActiveAdmin.routes(self)
@@ -14,7 +11,7 @@ Interactivecv::Application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :jobs
+      resources :jobs,:skills
     end
   end
   

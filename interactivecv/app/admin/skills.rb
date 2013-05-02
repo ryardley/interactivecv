@@ -1,6 +1,9 @@
 ActiveAdmin.register Skill do
   
-  index do                            
+  menu  :parent => "Data", 
+        :label => "Skills"
+  
+  index :download_links => false do                            
     column :title
     column :group                            
     default_actions

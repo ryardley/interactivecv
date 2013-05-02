@@ -1,6 +1,9 @@
 ActiveAdmin.register Job do
   
-  index do                            
+  menu  :parent => "Data", 
+        :label => "Jobs"
+  
+  index :download_links => false  do                            
     column :title
     column :company                            
     default_actions
@@ -15,7 +18,7 @@ ActiveAdmin.register Job do
     f.inputs "Job Details" do       
       f.input :start_date
       f.input :end_date 
-      f.input :skills
+      f.input :skills, :as => :check_boxes
     end
     f.actions                         
   end
