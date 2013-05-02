@@ -5,3 +5,4 @@ Interactivecv.Job = DS.Model.extend
   description: DS.attr('string')
   startDate: DS.attr('date')
   endDate: DS.attr('date')
+  skills: DS.hasMany('Interactivecv.Skill')

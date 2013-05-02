@@ -2,6 +2,9 @@ Interactivecv::Application.routes.draw do
   
 
 
+  resources :skills
+
+
   get "ember/start"
 
   ActiveAdmin.routes(self)

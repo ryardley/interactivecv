@@ -15,3 +15,18 @@ Job.create(
   start_date:Date.new(2008,6,18),
   end_date:Date.new(2008,10,18) 
 )
+
+Job.create(
+  title:'Flash Developer',
+  company:'Intersim',
+  location:'Switzerland',
+  description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor tincidunt erat, non luctus justo ornare ut. Nunc nec est sapien. Donec a odio tellus. Praesent nisl turpis, convallis a blandit in, congue eu lectus. Vivamus purus lorem, dapibus ac molestie sit amet, luctus in nisi. Nunc imperdiet, eros sit amet imperdiet hendrerit, mi arcu ornare tellus, in tempus lacus velit vel nisl. Pellentesque posuere enim ut justo lacinia suscipit. Praesent molestie lobortis elit, quis ultrices neque cursus sed. Fusce ultrices dictum sem nec fringilla. Aenean quis lacus enim.',
+  start_date:Date.new(2008,6,18),
+  end_date:Date.new(2008,10,18) 
+)
+
+
+Skill.create(
+  title:'jQuery',
+  group:'Libraries'
+)
