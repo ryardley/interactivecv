@@ -1,5 +1,30 @@
 <div id="app-div" class="row-fluid">
 	<div class="row-fluid">
-		This is a detailed view
+		<div class="span8">
+			
+			<div id='picture_slider'>
+			{{#each picture in view.controller.content_images }}
+				<img {{bindAttr alt="picture.title" title="picture.title" src="picture.picture_medium"}}>
+			{{/each}}
+			</div>
+			
+			<div class="slider-wrapper theme-light" style="width:100%"> 
+				<div class="ribbon"></div>
+				<div id='picture_slider_holder' class="nivoSlider"></div>
+			</div>
+		</div>
+		<div class="span4" >
+			<h1>{{view.controller.title}}</h1>
+			<p class="lead">{{view.controller.company}}</p>
+			<p><small>{{view.controller.startToEndDateFormatted}}</small></p>
+			<p>{{view.controller.description}}</p>
+			<br/>
+			<p class="lead">Skills</p>
+			<ul>
+			{{#each skill in view.controller.skills}}
+				<li>{{skill.title}}</li>
+			{{/each}}
+			</ul>
+		</div>
 	</div>
 </div>

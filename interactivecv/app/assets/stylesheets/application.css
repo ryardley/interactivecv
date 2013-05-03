@@ -11,19 +11,3 @@
  *= require_self
  *= require_tree .
  */
-body {
-  	font-family: 'Helvetica Neue', Arial, sans-serif;
-	overflow-y:scroll;
-}
-.row-fluid .span4 {
-	width: 30%;
-}
-.skill-list{
-	.icon-chevron-down{
-		position: relative;
-		top: 12px;
-	}
-}
-.collapsed .icon-chevron-down{
-	background-position: -432px -72px;
-}

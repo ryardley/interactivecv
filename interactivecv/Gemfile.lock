@@ -64,6 +64,10 @@ GEM
       sass (>= 3.2.0)
       thor
     builder (3.0.4)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.1)
+      climate_control (>= 0.0.3, < 1.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -76,6 +80,10 @@ GEM
       orm_adapter (~> 0.1)
       railties (~> 3.1)
       warden (~> 1.2.1)
+    draper (1.2.0)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      request_store (~> 1.0.3)
     ember-data-source (0.0.5)
       ember-source
     ember-rails (0.12.0)
@@ -120,6 +128,12 @@ GEM
     mime-types (1.23)
     multi_json (1.7.2)
     orm_adapter (0.4.0)
+    paperclip (3.4.1)
+      activemodel (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.0)
+      mime-types
     polyamorous (0.5.0)
       activerecord (~> 3.0)
     polyglot (0.3.3)
@@ -148,6 +162,7 @@ GEM
     rake (10.0.4)
     rdoc (3.12.2)
       json (~> 1.4)
+    request_store (1.0.5)
     responders (0.9.3)
       railties (~> 3.1)
     sass (3.2.8)
@@ -179,8 +194,10 @@ PLATFORMS
 DEPENDENCIES
   activeadmin
   coffee-rails (~> 3.2.1)
+  draper
   ember-rails
   jquery-rails
+  paperclip
   rails (= 3.2.13)
   sass-rails (~> 3.2.3)
   sqlite3

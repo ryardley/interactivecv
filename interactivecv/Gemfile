@@ -24,6 +24,10 @@ gem 'jquery-rails'
 gem 'activeadmin'
 gem 'ember-rails'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem 'paperclip'
+gem 'draper'
+
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

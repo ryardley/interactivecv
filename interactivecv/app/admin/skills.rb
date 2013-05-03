@@ -1,7 +1,9 @@
 ActiveAdmin.register Skill do
   
-  menu  :parent => "Data", 
+  menu  :parent => "Content",
         :label => "Skills"
+
+  config.clear_sidebar_sections!
   
   index :download_links => false do                            
     column :title

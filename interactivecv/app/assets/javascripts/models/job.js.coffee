@@ -5,4 +5,6 @@ Interactivecv.Job = DS.Model.extend
   description: DS.attr('string')
   startDate: DS.attr('date')
   endDate: DS.attr('date')
+  content_images: DS.hasMany('Interactivecv.ContentImage')
+  lead_image_id: DS.attr('number')
   skills: DS.hasMany('Interactivecv.Skill')
