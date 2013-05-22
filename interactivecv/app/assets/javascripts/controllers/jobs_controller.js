@@ -16,8 +16,8 @@ Interactivecv.JobsController = Ember.ArrayController.extend({
         }
     },
     filteredJobs:function(){
-        var filterObjs = this.get('filterObjects');
- 		return this.filter(function(job, index, enumerable){   
+      var filterObjs = this.get('filterObjects');
+ 			return this.filter(function(job, index, enumerable){   
  			// display all if filter is empty
 			if(filterObjs.length==0){
 	            return true;
